@@ -54,3 +54,24 @@ Numcheck(); // uses the func
 // write an int as a div
 document.writeln("<div id=Itest>"+x+"</div>"); // writes the var X
 document.writeln("<div id=Itest>x</div>"); // writes "x"
+
+// GAME NOTES:
+
+//Events: (every response from the user) and Sets
+let grid = doucument.getElementByID('grid'); //takes the grid (through ID) and makes it a var
+let squares = []; //the square grid array
+let currentSnake = [2, 1, 0]; // starting position for the snake's part
+let direction = 1; //moves right
+
+// Game's Loop:
+for(let i =0; i<400; i++){ //this loop adds the squares to the grid
+    const square = // creates a square const
+    document.createElement('div'); // makes a place holder in the grid
+    grid.appendChild(square); // adds the square to the place holder
+    squares.push(square); // saves the squares to the array in the JS
+}
+
+// lambda func:
+currentSnake.forEach(index => squares[index].classList.remove('snake')); // the func goes over every place in the squares array and removes the snake (every place with a snake class)
+
+ 
