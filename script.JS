@@ -93,9 +93,7 @@ function move(){ //  moving and collision
         scoreDisplay.textContent = score;
         clearInterval(timerId); // 1. Stop the old speed timer
         intervalTime = intervalTime - 5; 
-    
         if (intervalTime < 50) intervalTime = 50; 
-        
         timerId = setInterval(move, intervalTime);
         generateApple();
     }
@@ -146,8 +144,8 @@ function handleSwipe(){
 
     if(Math.max(absDx, absDy) >30) { //checks if the move is big enough to count
         if(absDx > absDy) {
-            if (dx > 0) changeDir(-1) //right
-            if(dx <0) changeDir(1) //Left
+            if (dx > 0) changeDir(-1); //right
+            if(dx <0) changeDir(1); //Left
         } else {
             if (dy >0) changeDir(20); // down
             if (dy <0) changeDir(-20); // up  
