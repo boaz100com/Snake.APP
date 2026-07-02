@@ -9,6 +9,7 @@ let timerId = 0;
 let intervalTime = 200;
 let gameOn = true;
 
+
 let bgMusic = new Audio('assets/BGM.mp3');
 
 function bg_music(){
@@ -100,15 +101,34 @@ function move(){ //  moving and collision
    
 }
 
+function handleSwipe(){
+    let dx = touchEndX - touchStartX;
+    let dy = touchEndY - touchStartY;
+
+    const absDx = Math.abs(dx);
+    const absDy = Math.abs(dy);
+
+    if(Math.max(absDx, absDy) >3) { //checks if the move is big enough to count
+        if(absDx > absDy) {
+            if (dx > 0) changeDir(1); //right
+            if(dx <0) changeDir(-1); //Left
+        } else {
+            if (dy >0) changeDir(20); // down
+            if (dy <0) changeDir(-20); // up  
+        }
+    }
+}
+
+
         //touch controlls
 document.addEventListener('touchstart', e =>{ //first position
-    touchStartX = e.changeTouches[0].screenX;
-    touchStartY= e.changeTouches[0].screenY;
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY= e.changedTouches[0].screenY;
 }, false);
 
 document.addEventListener('touchend', e => {// second position
-    touchEndX = e.changeTouches[0].screenX;
-    touchEndY = e.changeTouches[0].screenX;
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
     handleSwipe(); 
 }, false);
 
@@ -135,21 +155,4 @@ document.addEventListener('keydown', e =>{ // listens to the keyboard and checks
 
 
 
-function handleSwipe(){
-    const dx = touchEndX - touchStartX;
-    const dy = touchEndY - touchEndY;
-
-    const absDx = Math.abs(dx);
-    const absDy = Math.abs(dy);
-
-    if(Math.max(absDx, absDy) >30) { //checks if the move is big enough to count
-        if(absDx > absDy) {
-            if (dx > 0) changeDir(1); //right
-            if(dx <0) changeDir(-1); //Left
-        } else {
-            if (dy >0) changeDir(20); // down
-            if (dy <0) changeDir(-20); // up  
-        }
-    }
-}
 
