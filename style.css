@@ -8,6 +8,14 @@ body {
     height: 100vh;
     margin: 0;
 }
+html, body {
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-y: none; 
+    touch-action: none; 
+    overflow: hidden;
+}
+
 .game-container{
     background: rgb(186, 241, 243);
     padding: 20px;
