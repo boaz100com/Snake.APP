@@ -1,25 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" dir ="ltr">
+<html lang "en" dir ="ltr">
     <head>
-        <meta charset = "UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SNAKE</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-        <link rel="shortcut icon" href="assets/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="Snake" />
-        <link rel="manifest" href="assets/site.webmanifest" />
+        <title>CPS TEST</title>
+        <link rel="stylesheet" href="CPS.css">
     </head>
     <body>
-        <div class="game-container">
-            <div id="end"></div>
-            <h1> score:<span id ="score">0</span></h1>
-            <div id="grid"></div>
-            <script src="script.JS"></script>
-            <button class = "arrow" onclick="startGame()">PLAY</button>
-            <button class = "arrow" onclick="endGame()">END</button>
-
+        <div>
+            <div class="game-container">
+                <h1 id = "title"></h1>
+            </div>
+            <h2 class = "game-container" id= "CPS"> CPS:</h2>
+            <h2 class = "game-container" id = "Time"> Time: </h2>
+            <h2 class = "game-container" id = "start" onclick="startGame()">Play Again</h2>
+            <script src="CPS.JS"></script>
+        </div>
     </body>
 </html>
