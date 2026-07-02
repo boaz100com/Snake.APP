@@ -16,7 +16,7 @@ body {
     text-align: center;
     align-items: center;
     justify-content: center;
-    width: 400px;
+    width: 40vh;
     margin: 0 auto; 
     position: relative;
     top: 20vh;
@@ -24,7 +24,7 @@ body {
 #grid{
     display: grid;
     grid-template-columns: repeat(20, 1fr);
-    width: 300px;
+    width: 30vh;
     height: 300px;
     margin:20px auto;
     background: hsl(0, 0%, 93%);
