@@ -144,8 +144,8 @@ function handleSwipe(){
 
     if(Math.max(absDx, absDy) >30) { //checks if the move is big enough to count
         if(absDx > absDy) {
-            if (dx > 0) changeDir(-1); //right
-            if(dx <0) changeDir(1); //Left
+            if (dx > 0) changeDir(1); //right
+            if(dx <0) changeDir(-1); //Left
         } else {
             if (dy >0) changeDir(20); // down
             if (dy <0) changeDir(-20); // up  
