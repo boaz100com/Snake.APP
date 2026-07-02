@@ -98,19 +98,19 @@ function move(){ //  moving and collision
         generateApple();
     }
    
+}
 
         //touch controlls
-    document.addEventListener('touchstart', e =>{ //first position
-        touchStartX = e.changeTouches[0].screenX;
-        touchStartY= e.changeTouches[0].screenY;
-    }, false);
+document.addEventListener('touchstart', e =>{ //first position
+    touchStartX = e.changeTouches[0].screenX;
+    touchStartY= e.changeTouches[0].screenY;
+}, false);
 
-    document.addEventListener('touchend', e => {// second position
-        touchEndX = e.changeTouches[0].screenX;
-        touchEndY = e.changeTouches[0].screenX;
-        handleSwipe(); 
-    }, false);
-}
+document.addEventListener('touchend', e => {// second position
+    touchEndX = e.changeTouches[0].screenX;
+    touchEndY = e.changeTouches[0].screenX;
+    handleSwipe(); 
+}, false);
 
 function generateApple(){
     do{
