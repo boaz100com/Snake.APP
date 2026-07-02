@@ -8,7 +8,7 @@ let score = 0;
 let timerId = 0;
 let intervalTime = 200;
 let gameOn = true;
-
+let isDirectionChanged = false;
 
 let bgMusic = new Audio('assets/BGM.mp3');
 
@@ -67,6 +67,7 @@ function endGame(){
 
 }
 function move(){ //  moving and collision
+    isDirectionChanged = false;
     //collision alg:
     const hitBottom = (currentSnake[0] +20>=400 && direction === 20); //checks the snake's head (number 0 in the array) and sees if it is the last place before the floor (<= 380)
     const hitTop = (currentSnake[0] <20 && direction === -20);
@@ -141,8 +142,9 @@ function generateApple(){
 
 
 function changeDir(newDir){ //takes the new direction
-    if(direction +newDir !==0) { // checks if the snakes is reversing
+    if(!isDirectionChanged && direction +newDir !==0) { // checks if the snakes is reversing
         direction = newDir; //writes the new direction
+        isDirectionChanged = true;
     }
 }
 
@@ -152,7 +154,3 @@ document.addEventListener('keydown', e =>{ // listens to the keyboard and checks
     if (e.key === 'ArrowLeft') changeDir(-1);
     if (e.key === 'ArrowRight') changeDir(1);
 });
-
-
-
-
